@@ -12,11 +12,18 @@ class Postform extends Component {
     render() {
         return (
             <div>
-                <h1>AddPosts</h1>
+                <h1>Add Post</h1>
                 <form>
                     <div>
-                        <label>Titke:</label>
+                        <label>Title:</label><br />
+                        <input type='text' name='title'/>
                     </div>
+                    <div>
+                        <label>Body:</label>< br />
+                        <textarea name='body'/>
+                    </div>
+                    <br />
+                    <button type='submit'>Submit</button>
                 </form>
             </div>
         )
