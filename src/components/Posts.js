@@ -8,7 +8,7 @@ class Posts extends Component {
         this.props.fetchPosts();
     }  
     render() {
-        const postItems =this.props.posts.map(post=>(
+        const postItems = this.props.posts.map(post => (
             //in JSX you have to have a key 
             <div key={post.id}>
                 <h3>{post.title}</h3>

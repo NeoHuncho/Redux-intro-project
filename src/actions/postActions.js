@@ -1,7 +1,7 @@
 import { FETCH_POSTS, NEW_POST } from './types';
 
 export const fetchPosts = () => dispatch => {
-    console.log('actions')
+  console.log('actions')
   fetch('https://jsonplaceholder.typicode.com/posts')
     .then(res => res.json())
     .then(posts =>
@@ -12,16 +12,17 @@ export const fetchPosts = () => dispatch => {
     );
 };
 
-export const createPost = (postData) => dispatch => {
-    fetch('https://jsonplaceholder.typicode.com/posts',{
-            method:'POST',
-            headers:{
-                'content-type':'application/JSON'
-            },
-            body:JSON.stringify(postData)
-        }).then(res => res.json()).then(post=> dispatch({
-            type: FETCH_POSTS,
-            payload: post
-          }));
+export const createPost = postData => dispatch => {
+  fetch('https://jsonplaceholder.typicode.com/posts', {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json'
+    },
+    body: JSON.stringify(postData)
+  }).then(res => res.json()).then(post => dispatch({
+    type: NEW_POST,
+    payload: post
+  }));
   
+
 };
