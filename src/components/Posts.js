@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchPosts } from '../actions/postActions';//..is like cd because you  need to go back into src
 
@@ -21,6 +22,11 @@ class Posts extends Component {
             </div>
         )
     }
+}
+Posts.propTypes={
+    fetchPosts: PropTypes.func.isRequired,
+    posts: PropTypes.array.isRequired
+
 }
 const mapStateToProps = state => ({
     posts: state.posts.items
