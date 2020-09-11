@@ -4,7 +4,7 @@ import rootReducer from './reducers'// dont need to put ./reducers/index.js as i
 
 const initialState={};
 
-const middleware = {thunk};
+const middleware = [thunk];
 
 const store= createStore(rootReducer, initialState, applyMiddleware(...middleware));
 

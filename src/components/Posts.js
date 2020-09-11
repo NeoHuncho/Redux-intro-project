@@ -1,8 +1,13 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux';
+import { fetchPosts } from '../actions/postActions';//..is like cd because you  need to go back into src
 
-class Posts extends Component {   
+class Posts extends Component { 
+    componentDidMount(){
+        this.props.fetchPosts();
+    }  
     render() {
-        const postItems =this.state.posts.map(post=>(
+        const postItems =this.props.posts.map(post=>(
             //in JSX you have to have a key 
             <div key={post.id}>
                 <h3>{post.title}</h3>
@@ -17,4 +22,7 @@ class Posts extends Component {
         )
     }
 }
-export  default Posts;
+const mapStateToProps = state => ({
+    posts: state.posts.items
+})
+export  default connect(mapStateToProps,{fetchPosts}) (Posts);
