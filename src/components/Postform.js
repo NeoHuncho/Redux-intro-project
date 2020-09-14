@@ -34,7 +34,7 @@ class Postform extends Component {
                 <h1>Add Post</h1>
                 <form onSubmit={this.onSubmit}>
                     <div>
-                        <label>Title:</label><br />
+                        <label className='Title'>Title:</label><br />
                         <input type='text' name='title' onChange={this.onChange} value ={this.state.title}/>
                     </div>
                     <div>

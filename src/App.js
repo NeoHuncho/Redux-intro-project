@@ -8,10 +8,12 @@ function App() {
   return (
     <Provider store={Store} >
       <div className='App' >
+        <div className='Content'>
         <Postform/>
         <hr/>
         <Posts />
       </div>
+       </div>
     </Provider>
   );
 
