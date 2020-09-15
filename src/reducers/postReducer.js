@@ -1,22 +1,23 @@
-import {FETCH_POSTS, NEW_POST} from '../actions/types'
+import { FETCH_POSTS, NEW_POST } from '../actions/types'
 
-const initialState={
+const initialState = {
     items: [],
-    item:{}
+    item: {}
 }
-export default function(state =initialState,action){
-    switch(action.type){
+export default function (state = initialState, action) {
+    switch (action.type) {
         case FETCH_POSTS:
             console.log('reducer')
-        return{
-                ...state,items:action.payload
+            return {
+                ...state,
+                items: action.payload
             };
         case NEW_POST:
-            return{
+            return {
                 ...state,
-                item:action.payload
+                item: action.payload
             };
-    default:
-        return state;
+        default:
+            return state;
     }
 }
