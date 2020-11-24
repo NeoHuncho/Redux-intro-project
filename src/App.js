@@ -3,7 +3,7 @@ import './App.css';
 import Posts from './components/Posts';
 import Postform from './components/Postform';
 import { Provider } from 'react-redux';
-import Store from './store.js'
+import Store from './Store'
 function App() {
   return (
     <Provider store={Store} >
